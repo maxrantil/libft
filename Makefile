@@ -1,8 +1,7 @@
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
-SRC_PATH = ./srcs/
-HEADER_PATH = ./includes/
-C_FILES = $(SRC_PATH)*.c
+HEADER_PATH = libft.h
+C_FILES = *.c
 
 all: $(NAME)
 

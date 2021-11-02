@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:14:07 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/02 17:14:15 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/02 17:15:28 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/02 21:15:36 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
+#include "libft.h"
 
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+	int	c;
+
+	i = 0;
+	c = 0;
+	while(s[i])
+	{
+		i++;
+		c++;
+	}
+	return (c);
 }
