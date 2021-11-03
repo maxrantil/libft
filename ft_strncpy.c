@@ -1,16 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:14:42 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/02 17:14:51 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/02 17:13:19 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/03 16:41:43 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strdup(const char *s1)
-{
+#include "libft.h"
 
+char	*ft_strncpy(char *dst, const char *src, size_t len)
+{
+	int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = 0;
+	while (j < len)
+	{
+		if (src[i] == '\0')
+			dst[j] = '\0';
+		else 
+		{
+			dst[j] = src[i];
+			i++;
+		}
+		j++;
+	}
+
+	return (dst);
 }

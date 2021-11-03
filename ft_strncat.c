@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:15:28 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/02 21:23:02 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/02 17:13:00 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/03 16:25:25 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	int	i;
-	int	c;
+	int	j;
 
-	i = 0;
-	c = 0;
-	while(s[i])
+	i = ft_strlen(s1);
+	j = 0;
+	while (s2[j] && n)
 	{
+		s1[i] = s2[j];
+		j++;
 		i++;
-		c++;
+		n--;
 	}
-	return (c);
+	s1[i] = '\0';
+	return (s1);
 }

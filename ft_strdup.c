@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:13:00 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/02 17:13:07 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/02 17:14:42 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/03 12:31:57 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, const char *s2)
-{
+#include "libft.h"
 
+char	*ft_strdup(const char *s1)
+{
+	char	*cpy;
+	int		i;
+
+	i = 0;
+	cpy = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
+	if (!cpy)
+		return (NULL);
+	ft_strcpy(cpy, s1);
+	return (cpy);
 }

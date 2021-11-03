@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:15:28 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/02 21:23:02 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/02 17:13:00 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/03 16:14:25 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	int	i;
-	int	c;
+	int	j;
 
-	i = 0;
-	c = 0;
-	while(s[i])
+	i = ft_strlen(s1);
+	j = 0;
+	while (s2[j])
 	{
+		s1[i] = s2[j];
+		j++;
 		i++;
-		c++;
 	}
-	return (c);
+	s1[i] = '\0';
+	return (s1);
 }

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat main.c | grep -m 1 ft_ | sed -e 's/.*ft_\(.*\)(.*/\1/'

@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/03 16:38:16 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/03 10:49:05 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,10 @@
 
 int main(void) 
 {  
-	/*char dst[29] = "cpy this str";
-  	const char str[29] = ":into: this str";
-	char dst1[29] = "cpy this str";
-  	const char str1[29] = ":into: this str";
-	*/
-	//char dst2[13]; 
-  	const char str2[18] = "dub this str";
-	//char dst3[13];
-  	const char str3[18] = "dub this str";
-
-
-   // printf("ft_strdup:		%s\n", ft_strdup(dst1, str1));
-	//printf("strdup:			%s\n", strdup(dst, str));
-	printf("ft_strdup:		%s\n", ft_strdup(str2));
-	printf("strdup:			%s\n", strdup(str3));
-
+	const char *str = "This str is 18 int";
+	
+	printf("strlen: 	%zu\n", strlen(str));
+	printf("ft_strlen:	%zu\n", ft_strlen(str));
 
 	return 0; 
 }
