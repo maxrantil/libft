@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:15:28 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/02 21:23:02 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/04 16:38:47 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlen(const char *s)
 
 	i = 0;
 	c = 0;
-	while(s[i])
+	while (s[i])
 	{
 		i++;
 		c++;

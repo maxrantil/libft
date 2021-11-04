@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:16:04 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/03 16:42:35 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/04 16:44:55 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while ((*s1 || *s2) && *s1 == *s2 && n)
-    {
-        s1++;
-        s2++;
+	{	
+		s1++;
+		s2++;
 		n--;
-    }
+	}
 	return (*s1 - *s2);
 }

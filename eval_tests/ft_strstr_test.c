@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/03 10:57:46 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/04 12:10:11 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 int main(void) 
 {  
-	char str[13] = "cpy this str";
-  	char dst[13];
+  	const char str2[58] = "srdub stthrstrirs str is a much";
+  	const char str3[18] = "str";
+	const char str4[18] = "mug";
+	const char str5[15] = "";
 
-	printf("strcpy:		%s\n", strcpy(dst, str));
-    printf("ft_strcpy:	%s\n", ft_strcpy(dst, str));
+	printf("ft_strchr:		%s\n", ft_strstr(str2, str3));
+	printf("strchr:			%s\n", strstr(str2, str3));
+	printf("ft_strchr:		%s\n", ft_strstr(str2, str4));
+	printf("strchr:			%s\n", strstr(str2, str4));
+	printf("ft_strchr:		%s\n", ft_strstr(str2, str5));
+	printf("strchr:			%s\n", strstr(str2, str5));
 
 	return 0; 
 }
