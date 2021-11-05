@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:10:27 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/02 17:10:33 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/02 17:10:40 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/05 21:42:08 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
+#include "libft.h"
 
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	if (src < dst && src + len > dst)
+	{
+		while (len--)
+		{
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+		}
+	}
+	else
+		return (ft_memcpy(dst, src, len));
+	return (dst);
 }

@@ -5,30 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/04 16:38:14 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/05 16:17:29 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/05 21:38:31 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"  
+#include "libft.h"
+int	main()
+{
+	char str[] = "stackoverflow";
+	char str1[] = "stackoverflow";
+	char str2[] = "stackoverflow";
+	char str3[] = "stackoverflow";
 
-int main(void) 
-{  
-	char str[] = "a potentially long string";
+	//char dst[60] = "ABCDEFGHIJKLMNOP";
+	//char dst1[60] = "ABCDEFGHIJKLMNOP";
+	//char dst2[60] = "ABCDEFGHIJKLMNOP";
+	//char dst3[60] = "ABCDEFGHIJKLMNOP";
+	size_t x = 7;
 
-    char dest[50] = "This is ";
-    char dest2[50] = "This is ";
-    size_t n = 16;
-    //char *a = ft_strlcat(dest, str, n);
-    int a = ft_strlcat(dest, str, n);
-    int b = strlcat(dest2, str, n);
+	printf("		%s\n\n", str);
 
-    printf("ft_strlcat:			%d\n", a);
-    printf("strlcat:			%d\n", b);
-    printf("Original string: %s\n", str);
-    printf("ft_strlcat:			%s\n", dest);
-    printf("strlcat:			%s\n", dest2);
+	memmove(str + 5, str, x);
+	ft_memmove(str1 + 5, str1, x);
+	memcpy(str2 + 5, str2, x);
+	ft_memcpy(str3 + 5, str3, x);
+
+	printf("memmove:	%s\n", str);
+	printf("ft_memmove	%s\n", str1);
+	printf("\n");
+	printf("memcpy:		%s\n", str2);
+	printf("ft_memcpy:	%s\n", str3);
 
 
-    return (0);
+	return (0);
+/*
+int main()
+{
+    char csrc[100] = "Geeksfor";
+    char psrc[100] = "HELLO WORLD!! Sd";
+    memmove(csrc+5, psrc, 5);
+    printf("memmmove:		%s\n", csrc);
+
+
+    char csrc2[100] = "Geeksfor";
+    char psrc2[100] = "HELLO WORLD!! Sd";
+    ft_memmove(csrc2+5, psrc2, 5);
+    printf("ft_memmove:		%s\n", csrc2);
+
+    char csrc3[100] = "Geeksfor";
+    memmove(csrc3+5, csrc3, 5);
+    printf("\nmemmove:		%s\n", csrc3);
+
+
+    char csrc4[100] = "Geeksfor";
+    ft_memmove(csrc4+5, csrc4, 5);
+    printf("ft_memmove:		%s\n", csrc4);
+
+    return 0;
+	*/
 }
