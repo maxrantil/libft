@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/06 21:00:04 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/06 20:56:53 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,46 +15,22 @@
 
 int main(void) 
 {  
-    int str1 = 45;
-	int	str3 = 92;
-	int	str4 = 95;
+    int str1 = 89;
 	int	str6 = 124;
-/*
-    printf("isalnum:		%d\n", isalnum(str));
-	printf("ft_isalnum:		%d\n", ft_isalnum(str));
-    printf("isalnum:		%d\n", isalnum(str1));
- 	printf("ft_isalnum:		%d\n", ft_isalnum(str1));
-*/
-	while (str1 != 52)
+
+	while (str1 != 91)
 	{
-		printf("ft_isalnum:     %d\n", ft_isalnum(str1));
-		printf("isalnum:        %d\n", isalnum(str1));
+		printf("ft_isalpha:     %d\n", ft_isalpha(str1));
+		printf("isalpha:        %d\n", isalpha(str1));
 		str1++;
 		ft_putchar('\n');
 	}
-	while (str6 != 120)
+	while (str6 != 121)
 	{
-		printf("ft_isalnum:     %d\n", ft_isalnum(str6));
-        printf("isalnum:        %d\n", isalnum(str6));
+		printf("ft_isalpha:     %d\n", ft_isalpha(str6));
+        printf("isalpha:        %d\n", isalpha(str6));
         str6--;
 		ft_putchar('\n');
 	}
-	while (str4 != 99)
-    {
-        printf("ft_isalnum:     %d\n", ft_isalnum(str4));
-        printf("isalnum:        %d\n", isalnum(str4));
-        str4++;
-		ft_putchar('\n');
-    }
-    while (str3 != 88)
-    {
-        printf("ft_isalnum:     %d\n", ft_isalnum(str3));
-        printf("isalnum:        %d\n", isalnum(str3));
-        str3--;
-		ft_putchar('\n');
-    }	
-
-
-
 	return 0; 
 }

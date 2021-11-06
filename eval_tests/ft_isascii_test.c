@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:10:40 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/06 17:38:38 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/06 20:14:59 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h"  
+#include <ctype.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t	i;
+int main(void) 
+{  
+	int str = 1510;
+    int str1 = 5;
 
-	i = 0;
-	if (src < dst && src + len > dst)
-	{
-		while (len--)
-			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
-	}
-	else
-		return (ft_memcpy(dst, src, len));
-	return (dst);
+    printf("isascii:		%d\n", isascii(str));
+	printf("ft_isascii:		%d\n", ft_isascii(str));
+    printf("isascii:		%d\n", isascii(str1));
+ 	printf("ft_isascii:		%d\n", ft_isascii(str1));
+
+
+
+
+
+	return 0; 
 }
