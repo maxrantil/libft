@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/06 20:40:25 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/06 21:00:04 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,28 @@ int main(void)
 		printf("ft_isalnum:     %d\n", ft_isalnum(str1));
 		printf("isalnum:        %d\n", isalnum(str1));
 		str1++;
+		ft_putchar('\n');
 	}
 	while (str6 != 120)
 	{
 		printf("ft_isalnum:     %d\n", ft_isalnum(str6));
         printf("isalnum:        %d\n", isalnum(str6));
         str6--;
+		ft_putchar('\n');
 	}
 	while (str4 != 99)
     {
         printf("ft_isalnum:     %d\n", ft_isalnum(str4));
         printf("isalnum:        %d\n", isalnum(str4));
         str4++;
+		ft_putchar('\n');
     }
     while (str3 != 88)
     {
         printf("ft_isalnum:     %d\n", ft_isalnum(str3));
         printf("isalnum:        %d\n", isalnum(str3));
         str3--;
+		ft_putchar('\n');
     }	
 
 
