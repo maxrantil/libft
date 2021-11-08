@@ -6,14 +6,14 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:44:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/06 18:28:56 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/08 13:49:28 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define YELLOW(...) printf("\033[1;32m" __VA_ARGS__)
+# define YELLOW(...) printf("\033[1;33m" __VA_ARGS__)
 
 # include <string.h>
 # include <unistd.h>
@@ -50,5 +50,11 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

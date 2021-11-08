@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 13:42:02 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/08 13:43:26 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/08 13:39:51 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/08 15:28:29 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	res;
-	int	minus;
+#include "libft.h"
 
-	i = 0;
-	res = 0;
-	minus = 1;
-	while (str[i] == ' ')
-		i++;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
+void	ft_putnbr(int n)
+{
+	long	nbr;
+
+	nbr = (long)n;
+	if (nbr < 0)
 	{
-		i++;
-		minus = -1;
+		write(1, "-", 1);
+		nbr *= -1;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	if (nbr > 9)
 	{
-		res = res * 10 + str[i] - 48;
-		i++;
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
 	}
-	return (res * minus);
+	else
+		ft_putchar(nbr + 48);
 }
