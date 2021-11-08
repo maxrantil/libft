@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:14:42 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/08 19:12:01 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/08 17:05:49 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h"  
 
-char	*ft_strdup(const char *s1)
-{
-	char	*cpy;
+int main(void) 
+{  
+	char	b[] = "Hello World"; 
+	char	c[] = "Hello World";
 
-	cpy = (char *)ft_memalloc(ft_strlen(s1) + 1);
-	ft_strcpy(cpy, s1);
-	return (cpy);
+	ft_bzero(b, 6);
+	bzero(c, 6);
+	printf("ft_bzero:	%s\n", b);
+	printf("bzero:		%s\n", c);
+	return (0);
 }

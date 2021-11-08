@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/05 12:28:50 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/08 16:24:28 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/08 19:12:04 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"  
+#include "libft.h"
 
-int main(void) 
-{  
-	char	b[] = "Hello World"; 
-	char	c[] = "Hello World";
+void	*ft_memalloc(size_t size)
+{
+	void	*mem;
 
-	ft_bzero(b, 5);
-	bzero(c, 5);
-	printf("ft_bzero:	%s\n", b);
-	printf("bzero:		%s\n", c);
-	return (0);
+	mem = malloc(sizeof(mem) * size);
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, size);
+	return (mem);
 }
