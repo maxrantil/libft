@@ -13,6 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define YELLOW(...) printf("\033[1;32m" __VA_ARGS__)
+
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
