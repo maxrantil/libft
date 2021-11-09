@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:17:21 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/09 21:28:43 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/09 20:19:30 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/09 20:30:55 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void    ft_strdel(char **as)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	if (as != NULL)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

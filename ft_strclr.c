@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:17:21 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/09 21:28:43 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/09 20:31:54 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/09 20:39:22 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void    ft_strclr(char *s)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	ft_bzero(s, ft_strlen(s));
 }
