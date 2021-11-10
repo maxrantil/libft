@@ -6,13 +6,13 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:31:54 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/09 20:39:22 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:12:44 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
 	ft_bzero(s, ft_strlen(s));
 }

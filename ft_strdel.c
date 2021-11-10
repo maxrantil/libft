@@ -6,13 +6,13 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:19:30 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/09 20:30:55 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:12:19 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
 	if (as != NULL)
 	{

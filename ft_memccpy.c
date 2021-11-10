@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:09:16 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/05 21:35:03 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/10 19:06:16 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (n--)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		if (c == ((unsigned char *)src)[i])
+		if ((unsigned char)c == ((unsigned char *)src)[i])
 			return (&(dst[i + 1]));
 		i++;
 	}

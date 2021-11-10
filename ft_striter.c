@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:10:27 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/10 19:01:17 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/10 11:42:29 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/10 18:12:00 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int	i;
-
-	i = 0;
-	if (dst == NULL && src == NULL)
-		return (0);
-	while (n--)
-	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dst);
+	while (s++)
+		f(s);
 }

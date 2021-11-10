@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 13:39:51 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/08 15:27:50 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:32:08 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (nbr > 9)
 	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr % 10, fd);
 	}
 	else
 		ft_putchar_fd(nbr + 48, fd);
