@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 11:42:29 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/11 11:40:18 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/11 10:03:58 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/11 13:46:18 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i])
-		f(&s[i++]);
+char	charfunc(char c)
+{
+	return (c++);
+}
+
+
+int	main()
+{
+	const char *str = "str";
+	char a;
+
+	char (*f)(char) = charfunc;
+	a = f('a');
+	ft_putstr(ft_strmap(str, charfunc));
+	ft_putchar('\n');
+	printf("%s\n", ft_strmap(str, &charfunc));
+	return 0;
 }
