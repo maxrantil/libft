@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 11:18:42 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/11 19:56:25 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/09 20:49:11 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/11 19:10:52 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include "libft.h"
+
+int     ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	while ((*s1 || *s2) && *s1 == *s2)
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && (s1[i] || s2[i]) & n--) 
 	{
-		s1++;
-		s2++;
+		i++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	if (s1[i] - s2[i] == 0)
+		return (1);
+	return (0);
 }

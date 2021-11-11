@@ -28,11 +28,11 @@ int	main()
 
     return 0;
 	*/
-	#include "libft.h"
+#include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
 
-int		memdel_test(void)
+int		main(void)
 {
 	int tests_passed = 0;
 

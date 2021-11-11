@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 09:52:05 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/11 13:47:04 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/11 18:04:55 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	ns = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	while (s[i])
 	{
-		ns[i] = s[i];
+		ns[i] = f(s[i]);
 		i++;
 	}
 	ns[i] = '\0';
-	f(ns[i]);
 	return (ns);
 }

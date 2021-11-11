@@ -1,17 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrequ.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 20:49:11 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/09 20:49:24 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/11 18:09:48 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/11 18:34:06 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_strequ(char const *s1, char const *s2)
+#include "libft.h"
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	unsigned int	i;
+	char *ns;
 
+	i = 0;
+	ns = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	while (s[i])
+	{
+		ns[i] = f(i ,s[i]);
+		i++;
+	}
+	ns[i] = '\0';
+	return (ns);
 }
-
