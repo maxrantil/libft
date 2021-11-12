@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:17:03 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/04 12:21:03 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/12 18:36:41 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	int	l;
 	int	x;
 
-	i = 0;
 	j = 0;
 	l = ft_strlen(needle);
 	if (needle[0] == '\0')

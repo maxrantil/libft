@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:16:04 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/12 18:29:03 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/12 16:35:23 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/12 16:42:37 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	**ft_strsplit(char const *s, char c)
 {
-	while ((*s1 || *s2) && *s1 == *s2 && --n)
-	{	
-		s1++;
-		s2++;
-	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	
 }

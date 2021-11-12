@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:52:55 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/12 10:57:40 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/12 17:07:44 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(size + 1));
+	str = (char *)malloc(size + 1);
 	if (!str)
 		return (NULL);
-	ft_bzero(str, size);
+	ft_strclr(str);
 	return (str);
 }

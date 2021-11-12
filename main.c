@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/04 11:44:15 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/12 19:46:00 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,21 @@
 
 int main(void) 
 {  
-  	const char str2[58] = "srdub stthrstrirs str is a much";
-  	const char str3[18] = "str";
-	const char str4[18] = "mug";
-	const char str5[15] = "";
+	char str[] = "a potentially long string";
 
-	printf("ft_strchr:		%s\n", ft_strnstr(str2, str3, 25));
-	printf("strchr:			%s\n", strnstr(str2, str3, 25));
-	printf("ft_strchr:		%s\n", ft_strnstr(str2, str4, 15));
-	printf("strchr:			%s\n", strnstr(str2, str4, 15));
-	printf("ft_strchr:		%s\n", ft_strnstr(str2, str5, 3));
-	printf("strchr:			%s\n", strnstr(str2, str5, 3));
+    char dest[50] = "This is ";
+    char dest2[50] = "This is ";
+    size_t n = 0;
+    //char *a = ft_strlcat(dest, str, n);
+    int a = ft_strlcat(dest, str, n);
+    int b = strlcat(dest2, str, n);
 
-    char *s1 = "MZIRIBMZIRIBMZE123";
-    char *s2 = "MZIRIBMZE";
-    size_t max = strlen(s2);
-    char *i1 = strnstr(s1, s2, max);
-    char *i2 = ft_strnstr(s1, s2, max);
-
-    printf("strstr      %s\n", i1);
-    printf("ft_strnstr: %s\n", i2);
+    printf("ft_strlcat:			%d\n", a);
+    printf("strlcat:			%d\n", b);
+    printf("Original string: %s\n", str);
+    printf("ft_strlcat:			%s\n", dest);
+    printf("strlcat:			%s\n", dest2);
 
 
-	return 0; 
+    return (0);
 }
