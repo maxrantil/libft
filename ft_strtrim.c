@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 09:31:50 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/12 14:41:47 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/12 12:22:10 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/12 14:48:05 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s)
 {
 	int		i;
-	char	*ss;
+	int		j;
+	int		e;
+	int		y;
+	char	*st;
+	char	*blanc;
 
 	i = 0;
-	ss = (char *)malloc(sizeof(char) * len + 1);
-	if (!ss)
+	j = 0;
+	e = ft_strlen(s) - 1;
+	while (s[e] == ' ' || s[e] == '\t' || s[e] == '\n')
+		if (!e)
+		{
+			blanc = "";
+			return (blanc);
+		}		
+		e--;
+	while ((s[i] == ' ' || s[i] == '\t' || s[i] == '\n') && s[i])
+         i++;
+	y = e - i + 1;
+	st = (char *)malloc(sizeof(char) * y + 1);
+	if (!st)
 		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		ss[i] = '\0';
-		return (ss);
-	}
-	while (len--)
-	{
-		ss[i++] = s[start++];
-	}
-	ss[i] = '\0';
-	return (ss);
+	while (y--)
+		st[j++] = s[i++];
+	st[j] = '\0';
+	return (st);
 }

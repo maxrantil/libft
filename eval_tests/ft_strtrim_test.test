@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 20:49:11 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/12 14:41:20 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/12 12:22:53 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/12 14:28:51 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+int	main()
 {
-	int	i;
+	char *str = "   	Tjis is a stri ng 	";
+	char *strb = "  		 	 	";
 
-	i = 0;
-	while (s1[i] == s2[i] && (s1[i] || s2[i]) & n--)
-	{
-		i++;
-	}
-	if (s1[i] - s2[i] == 0)
-		return (1);
+	ft_putendl(str);
+	ft_putendl(ft_strtrim(str));
+	ft_putendl("blanc string under this");
+	ft_putendl(ft_strtrim(strb));
+
+
 	return (0);
 }

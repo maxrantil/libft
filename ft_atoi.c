@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:14:00 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/10 18:14:04 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/12 12:38:50 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	res = 0;
 	minus = 1;
-	while (str[i] == ' ')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 		i++;
 	if (str[i] == '+')
 		i++;

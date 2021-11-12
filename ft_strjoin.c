@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 20:49:11 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/12 14:41:20 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/12 11:05:00 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/12 14:30:54 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	*sj;
 
 	i = 0;
-	while (s1[i] == s2[i] && (s1[i] || s2[i]) & n--)
+	j = 0;
+	sj = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!sj)
+		return (NULL);
+	while (s1[i])
 	{
+		sj[i] = s1[i];
 		i++;
 	}
-	if (s1[i] - s2[i] == 0)
-		return (1);
-	return (0);
+	while (s2[j])
+	{
+		sj[i] = s2[j];
+		i++;
+		j++;
+	}
+	sj[i] = '\0';
+	return (sj);
 }

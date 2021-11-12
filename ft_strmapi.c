@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:09:48 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/11 18:34:06 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/12 14:40:36 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char *ns;
+	char			*ns;
 
 	i = 0;
 	ns = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	while (s[i])
 	{
-		ns[i] = f(i ,s[i]);
+		ns[i] = f(i, s[i]);
 		i++;
 	}
 	ns[i] = '\0';
