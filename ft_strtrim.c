@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 12:22:10 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/12 16:33:07 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/16 19:30:49 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s)
 	char	*st;
 	char	*blanc;
 
+	if (!s)
+		return (NULL);
 	blanc = "";
 	i = 0;
 	e = ft_strlen(s) - 1;

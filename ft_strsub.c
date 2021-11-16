@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:31:50 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/12 14:41:47 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/16 19:33:23 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	int		i;
 	char	*ss;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	ss = (char *)malloc(sizeof(char) * len + 1);
 	if (!ss)

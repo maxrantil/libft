@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:35:23 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/15 15:51:49 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/16 19:54:24 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,12 @@ char	**ft_strsplit(char const *s, char c)
 	int				index;
 	int				wc;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	e = 0;
 	index = 0;
 	wc = word_count(s, c);
-	printf("%d\n", wc);
 	ret = (char **)malloc(sizeof(char *) * wc + 1);
 	if (!ret)
 		return (NULL);
@@ -61,12 +62,12 @@ char	**ft_strsplit(char const *s, char c)
 			e++;
 		}
 		if (s[i] == '\0')
-			break;
+			break ;
 		while (s[e] != c)
 		{
 			e++;
 			if (!s[e])
-				break;
+				break ;
 		}
 		ret[index] = ft_strsub(s, i, e - i);
 		index++;

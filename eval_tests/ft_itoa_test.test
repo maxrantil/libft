@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:53:48 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/16 11:58:47 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/16 19:53:06 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,26 @@
 
 int	main()
 {
-	int	a = 1234;
+	int	a = 0;
 	int	x = -1234;
 	int b = 3932838;
-	int c = 2147483647;
+	int c = -2147483647;
 	long d = 2147483648;
 	int e = -2147483648;
 
-	printf("%s	1234?\n", ft_itoa(a));
+	printf("%s	0?\n", ft_itoa(a));
 	printf("%s	-1234?\n", ft_itoa(x));
 	printf("%s	3932838?\n", ft_itoa(b));
-	printf("%s	2147483647?\n", ft_itoa(c));
+	printf("%s	-2147483647?\n", ft_itoa(c));
 	printf("%s	2147483648?\n", ft_itoa(d));
 	printf("%s	-2147483648?\n", ft_itoa(e));
+	
+
+	char *i1 = ft_itoa(-1234);
+	if (ft_strcmp(i1, "-1234"))
+	{
+		ft_putendl("Failed malloc");
+	}
+	ft_putendl("malloc Succes");
 	return (0);
 }

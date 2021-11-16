@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:31:54 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/10 18:12:44 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/16 19:42:52 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_strclr(char *s)
 {
+	if (!s)
+		return ;
 	ft_bzero(s, ft_strlen(s));
 }

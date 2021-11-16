@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:22:07 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/16 11:58:44 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/16 19:55:09 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,44 @@ static int	n_length(int nbr)
 {
 	int		c;
 
-	c = 0;
-	if (nbr < 0)
+	c = 1;
+	if (nbr <= 0)
 	{
 		nbr *= -1;
+		if (nbr == 0)
+			c = 0;
+		c++;
 	}
-	if (nbr > 9)
+	while (nbr > 9)
 	{
-		n_length(nbr / 10);
-		n_length(nbr % 10);
-	}
-	else
-	{
-		c = c + 1;		
+		nbr = nbr / 10;
+		c++;
 	}
 	return (c);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int nbr)
 {
 	char	*s;
 	int		l;
+	long	n;
+	int		ll;
 
+	n = (long)nbr;
 	l = n_length(n);
-	s = (char *)ft_memalloc(sizeof(char) * l +  1);
+	ll = l;
+	s = (char *)malloc(sizeof(char) * l + 1);
+	if (!s)
+		return (NULL);
+	while (l--)
+	{
+		if (n < 0)
+			n *= -1;
+		s[l] = (n % 10) + 48;
+		n = n / 10;
+	}
+	if (s[0] == '0' && s[1] != '\0')
+		s[0] = '-';
+	s[ll] = '\0';
 	return (s);
 }

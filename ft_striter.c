@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:42:29 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/11 18:05:01 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/16 19:41:58 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ void	ft_striter(char *s, void (*f)(char *))
 {
 	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 		f(&s[i++]);

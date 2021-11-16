@@ -6,19 +6,16 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:44:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/15 15:51:57 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/16 19:43:51 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define YELLOW(...) printf("\033[1;33m" __VA_ARGS__)
-
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h> //REMOVE BEFORE TURN IN
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
