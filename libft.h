@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:44:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/17 15:38:55 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/17 20:06:49 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ typedef struct s_list
 
 	struct s_list	*next;
 }					t_list;
-
-typedef struct s_size{
-	size_t	i;
-	size_t	j;
-	size_t	x;
-	size_t	t;
-}				t_size;	
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);

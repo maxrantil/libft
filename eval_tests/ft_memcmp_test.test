@@ -6,11 +6,13 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:17:29 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/06 16:28:15 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/17 17:30:06 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+
 int	main()
 {
     char *str = "cm1p this str to str1";
@@ -30,5 +32,7 @@ int	main()
     printf("memcmp return:  %d. ft_memcmp return:   %d.\n", memcmp(str3, str, var), ft_memcmp(str7, str4, var));
     printf("memcmp return:  %d. ft_memcmp return:   %d.\n", memcmp(str2, str3, var), ft_memcmp(str6, str7, var));
 
+	printf("%d\n", ft_memcmp("aww", "bpp", 0));  // == 0
+	printf("%d\n", memcmp("aww", "bpp", 0));
 	return (0);
 }

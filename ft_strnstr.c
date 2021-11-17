@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr_new.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 17:16:23 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/17 15:13:26 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/17 18:37:08 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/17 20:01:10 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static	size_t	if_error(size_t t)
-{
-	if (!t)
-		return (0);
-	t--;
-	return (t);
-}
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	t_size	size;
+	size_t	i;
+	size_t	j;
 
-	size.i = 0;
-	size.j = 0;
-	if (needle[0] == '\0')
+	i = 0;
+	j = 0;
+	if (needle[i] == '\0')
 		return ((char *)haystack);
-	while (haystack[size.j] && len)
+	while (haystack[j] && len)
 	{
-		size.x = size.j;
-		size.t = len;
-		while (haystack[size.x] == needle[size.i])
+		while (haystack[j + i] == needle[i] && i < len)
 		{
-			size.i++;
-			size.x++;
-			if (size.i == ft_strlen(needle))
-				return (&((char *)haystack)[size.j]);
-			if_error(size.t);
+			i++;
+			if (i == ft_strlen(needle))
+				return (&((char *)haystack)[j]);
 		}
-		size.j++;
+		i = 0;
 		len--;
+		j++;
 	}
 	return (NULL);
 }
