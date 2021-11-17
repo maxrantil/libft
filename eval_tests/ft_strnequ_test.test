@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:32 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/11 19:10:58 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/17 11:21:12 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main()
 	char const *str4 = "hello world";
 	char const *str5 = "";
 	char const *str6 = "";
-	size_t n = 3;
+	size_t n = 0;
 
 
 	printf("%d <- equal\n", ft_strnequ(str1, str2, n));

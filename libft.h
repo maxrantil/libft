@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:44:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/16 19:43:51 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/17 12:19:45 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef	struct s_size{
+	size_t i;
+	size_t j;
+	size_t x;
+	size_t t;
+} 				size;	
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
