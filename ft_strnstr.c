@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:16:23 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/17 12:22:02 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/17 15:13:26 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static	size_t	if_error(size_t t)
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size	size;
+	t_size	size;
 
 	size.i = 0;
 	size.j = 0;

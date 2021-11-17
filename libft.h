@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:44:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/17 12:19:45 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/17 15:38:55 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,20 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef	struct s_size{
-	size_t i;
-	size_t j;
-	size_t x;
-	size_t t;
-} 				size;	
+typedef struct s_list
+{
+	void			*content;
+	size_t			content_size;
+
+	struct s_list	*next;
+}					t_list;
+
+typedef struct s_size{
+	size_t	i;
+	size_t	j;
+	size_t	x;
+	size_t	t;
+}				t_size;	
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -60,7 +68,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void    *ft_memalloc(size_t size);
+void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);

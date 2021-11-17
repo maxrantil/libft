@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:35:23 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/16 19:54:24 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/17 14:37:32 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,13 @@ static int	word_count(char const *s, char c)
 	return (wc);
 }
 
-char	**ft_strsplit(char const *s, char c)
+static char	**make_ret(char const *s, char c, char **ret, size_t e)
 {
-	unsigned int	i;
-	size_t			e;
-	char			**ret;
-	int				index;
-	int				wc;
+	size_t	i;
+	int		index;
 
-	if (!s)
-		return (NULL);
 	i = 0;
-	e = 0;
 	index = 0;
-	wc = word_count(s, c);
-	ret = (char **)malloc(sizeof(char *) * wc + 1);
-	if (!ret)
-		return (NULL);
 	while (s[i])
 	{
 		while (s[i] == c)
@@ -69,10 +59,24 @@ char	**ft_strsplit(char const *s, char c)
 			if (!s[e])
 				break ;
 		}
-		ret[index] = ft_strsub(s, i, e - i);
-		index++;
+		ret[index++] = ft_strsub(s, i, e - i);
 		i = e;
 	}
 	ret[index] = 0;
+	return (ret);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char		**ret;
+	size_t		e;
+
+	e = 0;
+	if (!s)
+		return (NULL);
+	ret = (char **)malloc(sizeof(char *) * word_count(s, c) + 1);
+	if (!ret)
+		return (NULL);
+	ret = make_ret(s, c, ret, e);
 	return (ret);
 }
