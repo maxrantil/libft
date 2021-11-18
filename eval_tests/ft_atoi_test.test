@@ -5,28 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 20:28:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/06 21:11:40 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/18 18:13:06 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/18 18:25:47 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"  
+#include <stdio.h>
+#include "libft.h"
 
-int main(void) 
-{  
-	char *str = "0";
-	char *str1 = "-2";
-	char *str2 = "+1";
-	char *str3 = " 1";
-
-	printf("atoi:		%d\n", atoi(str));
-	printf("ft_atoi:	%d\n", ft_atoi(str));
-	printf("atoi:		%d\n", atoi(str1));
-	printf("ft_atoi:	%d\n", ft_atoi(str1));
-	printf("atoi:		%d\n", atoi(str2));
-	printf("ft_atoi:	%d\n", ft_atoi(str2));
-	printf("atoi:		%d\n", atoi(str3));
-	printf("ft_atoi:	%d\n", ft_atoi(str3));
-
-	return(0);
+int	main()
+{
+	 printf("%d\n", ft_atoi("1000"));
+    printf("%d\n", atoi("1000"));
+    printf("\n");
+    printf("%d\n", ft_atoi("0"));
+    printf("%d\n", atoi("0"));
+    printf("\n");
+    printf("%d\n", ft_atoi("-1000"));
+    printf("%d\n", atoi("-1000"));
+    printf("\n");
+    printf("%d\n", ft_atoi("               +98765"));
+    printf("%d\n", atoi("               +98765"));
+    printf("\n");
+    printf("%d\n", ft_atoi("-2147483648"));
+    printf("%d\n", atoi("-2147483648"));
+    printf("\n");
+    printf("%d\n", ft_atoi("   -123abc123"));
+    printf("%d\n", atoi("   -123abc123"));
+    printf("\n");
+    printf("%d\n", ft_atoi(""));
+    printf("%d\n", atoi(""));
+    printf("\n");
+    printf("%d\n", ft_atoi("aa"));
+    printf("%d\n", atoi("aa"));
+    printf("\nLongstart\n\n");
+    printf("-9999999999999999999 should return 0\n");
+    printf("%d\n", ft_atoi("-99999999999999999999999"));
+    printf("%d\n", atoi("-99999999999999999999999"));
+    printf("-9223372036854775807 should return 0\n");
+    printf("%d\n", ft_atoi("-9223372036854775807"));
+    printf("%d\n", atoi("-9223372036854775807"));
+    printf("-9223372036854775808 should return 0\n");
+    printf("%d\n", ft_atoi("-9223372036854775808"));
+    printf("%d\n", atoi("-9223372036854775808"));
+    printf("+99999999999999999999999 should return -1\n");
+    printf("%d\n", ft_atoi("+99999999999999999999999"));
+    printf("%d\n", atoi("+99999999999999999999999"));
+    printf("-9223372036854775809 should return 0\n");
+    printf("%d\n", ft_atoi("-9223372036854775809"));
+    printf("%d\n", atoi("-9223372036854775809"));
+    printf("9223372036854775809 should return -1\n");
+    printf("%d\n", ft_atoi("9223372036854775809"));
+    printf("%d\n", atoi("9223372036854775809"));
+	return (0);
 }

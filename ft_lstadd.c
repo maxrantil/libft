@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 15:00:31 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/18 15:39:32 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/18 18:06:03 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void    ft_lstadd(t_list **alst, t_list *new)
 {
-	ft_lstnew(new, sizeof(alst));
+	new =  *alst;
+	if (new)
+		new->next = ft_lstnew(new, sizeof(alst));
+	else
+		*alst = ft_lstnew(new, sizeof(alst));
 }

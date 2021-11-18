@@ -1,9 +1,18 @@
-#include <stdio.h>  // printf
-#include <string.h> // strdup
-#include <ctype.h>  // toupper/tolower
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ft_striteri_test.test                              :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/18 18:49:33 by mrantil           #+#    #+#              #
+#    Updated: 2021/11/18 18:53:39 by mrantil          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-void	ft_striteri(char *str, void (*func)(unsigned int, char *));
-// todo: implement this
+#include <stdio.h>  
+#include <string.h>
+#include <ctype.h>  
 
 void	alternate(unsigned int i, char *string)
 {
@@ -13,10 +22,19 @@ void	alternate(unsigned int i, char *string)
 		string[i] = tolower(string[i]);
 }
 
-signed	main()
+int	main()
 {
+	char        str[] = "Hello";
+
+    ft_striteri(NULL, NULL);
+    ft_striteri(str, NULL);
+    ft_striteri(str, uf_striteri_callback);
+    if (strcmp(str, "Hfnos") != 0)
+       ft_putend("Error");
+
 	char *string = strdup("hello world\n");
 	ft_striteri(string, alternate);
 	printf("%s", string);
+	return 0;
 }
 

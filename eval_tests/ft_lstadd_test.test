@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 11:42:29 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/18 19:14:47 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/18 17:50:12 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/18 18:07:30 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
-{
-	int	i;
+#include "libft.h"
+#include <assert.h>
 
-	if (!s)
-		return ;
-	if (!f)
-		return ;
-	i = 0;
-	while (s[i])
-		f(&s[i++]);
+int	main(void)
+{
+	t_list	*list;
+	t_list	*list2;
+
+	list = malloc(sizeof(t_list));
+	list2 = malloc(sizeof(t_list));
+	bzero(list, sizeof(t_list));
+	bzero(list2, sizeof(t_list));
+	ft_lstadd(&list2, list);
+	assert(list == list2);
+	assert(list->next != NULL);
 }
