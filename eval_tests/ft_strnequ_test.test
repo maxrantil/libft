@@ -6,11 +6,12 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:32 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/17 11:21:12 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/18 12:30:42 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	main()
 {
@@ -20,7 +21,7 @@ int	main()
 	char const *str4 = "hello world";
 	char const *str5 = "";
 	char const *str6 = "";
-	size_t n = 0;
+	size_t n = 1;
 
 
 	printf("%d <- equal\n", ft_strnequ(str1, str2, n));
@@ -28,8 +29,8 @@ int	main()
 	printf("%d <- both null\n", ft_strnequ(str5, str6, n));
 	printf("%d <- one str, one null\n", ft_strnequ(str5, str4, n));
 
-
-
+	printf("%d\n", ft_strnequ("ededeqdf", "", 0)); //should be 1
+//	printf("%d\n", strnequ("ededeqdf", "", 0));
 
 	return 0;
 }
