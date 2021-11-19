@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 15:00:31 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/19 14:37:28 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/19 12:21:24 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/19 15:10:00 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
-
-void    ft_lstadd(t_list **alst, t_list *new)
+ 
+int main(void)
 {
-	new->next = *alst;
-	(*alst) = new;
+	t_list *temp;
+
+	temp = ft_lstnew("Test0\n", 6);
+	ft_lstadd(&temp, temp);
+	ft_lstadd(&temp, temp);
+	ft_lstadd(&temp, temp);
+	ft_lstadd(&temp, temp);
+	ft_lstadd(&temp, temp);
+ 
+	while (temp)
+	{
+		printf("%s", temp->content);
+        temp = temp->next;
+	}	
 }
