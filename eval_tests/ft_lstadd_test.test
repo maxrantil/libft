@@ -5,24 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 17:50:12 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/18 18:07:30 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/19 12:21:24 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/19 15:10:00 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
-#include <assert.h>
-
-int	main(void)
+ 
+int main(void)
 {
-	t_list	*list;
-	t_list	*list2;
+	t_list *temp;
 
-	list = malloc(sizeof(t_list));
-	list2 = malloc(sizeof(t_list));
-	bzero(list, sizeof(t_list));
-	bzero(list2, sizeof(t_list));
-	ft_lstadd(&list2, list);
-	assert(list == list2);
-	assert(list->next != NULL);
+	temp = ft_lstnew("Test0\n", 6);
+	ft_lstadd(&temp, temp);
+	ft_lstadd(&temp, temp);
+	ft_lstadd(&temp, temp);
+	ft_lstadd(&temp, temp);
+	ft_lstadd(&temp, temp);
+ 
+	while (temp)
+	{
+		printf("%s", temp->content);
+        temp = temp->next;
+	}	
 }

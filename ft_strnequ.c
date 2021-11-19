@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:49:11 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/18 12:30:09 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/19 17:26:01 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	size_t	i;
-	
+
 	if (s1 == NULL || s2 == NULL)
-		return (0); 	
+		return (0);
 	if (!n)
 		return (1);
 	i = 0;
