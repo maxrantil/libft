@@ -1,14 +1,15 @@
 #include "libft.h"
+#include <stdio.h>
 
 int main()
 
 {
-	char str[] = "Hello'\0'World";
+	char str[] = "Hello\0World";
 
     char *a, *b;
-    char c = '\0';
+    char c = 'e';
 
-    a = ft_strrchr(str, c);
+    a = ft_strrchr(NULL, c);
     b = strrchr(str, c);
 
     printf("%s\n", a);
