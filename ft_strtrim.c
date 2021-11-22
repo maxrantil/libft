@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 12:22:10 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/19 18:49:20 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/22 11:54:38 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/22 12:56:37 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,28 @@
 
 char	*ft_strtrim(char const *s)
 {
-	int		i;
-	int		e;
-	int		y;
-	char	*st;
+	size_t		i;
+	size_t		e;
+	size_t		start;
+	char		*st;
 
 	if (!s)
 		return (NULL);
 	i = 0;
 	e = ft_strlen(s) - 1;
-	while ((s[e] == ' ' || s[e] == '\t' || s[e] == '\n') && e--)
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		i++;
+	start = i;
+	if (i != ft_strlen(s))
 	{
-		if (!e)
+		while (s[e] == ' ' || s[e] == '\t' || s[e] == '\n')
 		{
-			st = (char *)malloc(1);
-			st[0] = '\0';
-			return (st);
+			e--;
+			i++;
 		}
 	}
-	while ((s[i] == ' ' || s[i] == '\t' || s[i] == '\n') && s[i])
-		i++;
-	y = e - i + 1;
-	st = (char *)malloc(sizeof(char) * y + 1);
+	st = ft_strsub(s, start, ft_strlen(s) - i);
 	if (!st)
 		return (NULL);
-	e = 0;
-	while (y--)
-		st[e++] = s[i++];
-	st[e] = '\0';
 	return (st);
 }

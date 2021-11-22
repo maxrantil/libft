@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: mrantil <mrantil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:31:50 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/16 19:33:23 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/22 15:37:48 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	ss = (char *)malloc(sizeof(char) * len + 1);
 	if (!ss)
 		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		ss[i] = '\0';
-		return (ss);
-	}
 	while (len--)
-	{
 		ss[i++] = s[start++];
-	}
 	ss[i] = '\0';
 	return (ss);
 }
