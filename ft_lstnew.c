@@ -6,13 +6,13 @@
 /*   By: mrantil <mrantil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 12:35:00 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/23 10:52:04 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/23 14:07:40 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t	content_size)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*list;
 
