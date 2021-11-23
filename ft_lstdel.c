@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:51:09 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/19 17:27:00 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/23 12:26:12 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list	*head;
-	t_list	*tmp;
+	t_list	*temp;
 
-	tmp = *alst;
-	while (tmp != NULL)
+	temp = *alst;
+	while (temp != NULL)
 	{
-		head = tmp->next;
-		del(tmp->content, tmp->content_size);
-		free(tmp);
-		tmp = head;
+		head = temp->next;
+		del(temp->content, temp->content_size);
+		free(temp);
+		temp = head;
 	}
 	*alst = NULL;
 }

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 14:45:10 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/23 12:04:25 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/23 11:06:12 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/23 11:10:10 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+int	ft_nbrlen(int i);
+
+int main()
 {
-	if (alst != NULL)
-	{
-		(*del)((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
-	}
+	int i = +123;
+
+	printf("%d\n", ft_nbrlen(i));
+	return 0;
 }
