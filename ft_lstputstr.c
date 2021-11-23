@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstputstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:06:12 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/23 14:12:05 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/23 17:07:47 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/23 17:12:52 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int main()
+void	ft_lstputstr(t_list **alst)
 {
-	t_list *head;
-	
-	head = malloc(sizeof(t_list));
-	if (!head)
-		return (0);	
-	head->content = (int *)5;
-	head->next = NULL;
+	t_list	*ptr;
 
-	ft_lstnew(head, sizeof(t_list));
-//	ft_lstnew(head->next, sizeof(t_list));
-//	ft_lstnew(head->next->next, sizeof(t_list));
-
-	ft_lstputnbr(&head);
-	return 0;
+	if (*alst == NULL)
+		return ;
+	ptr = *alst;
+	while (ptr != NULL)
+	{
+		ft_putendl((char *)ptr->content);
+		ptr = ptr->next;
+	}
 }

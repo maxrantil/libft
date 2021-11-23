@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:44:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/23 13:44:55 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/23 17:10:57 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int		ft_nbrlen(int i);
 int		ft_lstcount(t_list *head);
 void	ft_lstputnbr(t_list **alst);
+void	ft_lstaddend(t_list **alst, t_list *new);
+void	ft_lstputstr(t_list **alst);
 
 #endif
