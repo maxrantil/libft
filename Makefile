@@ -17,7 +17,7 @@ all: $(NAME)
 
 $(NAME):
 	gcc $(FLAGS) -c $(C_FILES) -I $(HEADER_PATH)
-	ar rc $(NAME) *.o 
+	ar rc $(NAME) $(C_FILES:c.=.o) 
 	ranlib $(NAME)
 	
 clean:
