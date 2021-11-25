@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:03:47 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/23 11:12:01 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/25 13:12:34 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/25 13:31:30 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_nbrlen(int nbr)
-{
-	int	c;
+#include "libft.h"
 
-	c = 1;
-	if (nbr <= 0)
-	{
-		nbr *= -1;
-		if (nbr == 0)
-			c = 0;
-		c++;
-	}
-	while (nbr > 9)
-	{
-		nbr = nbr / 10;
-		c++;
-	}
-	return (c);
+int	ft_isspace(const char *str)
+{
+	if ((*str >= 9 && *str <= 13) || *str == 32)
+		return (1);
+	return (0);
 }

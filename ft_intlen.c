@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:58:30 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/25 13:34:03 by mrantil          ###   ########.fr       */
+/*   Created: 2021/11/23 11:03:47 by mrantil           #+#    #+#             */
+/*   Updated: 2021/11/25 14:57:01 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_atoi(const char *str)
+int	ft_intlen(long nbr)
 {
-	unsigned long int	res;
-	long int			minus;
+	int	c;
 
-	res = 0;
-	minus = 1;
-	while (ft_isspace(str))
-		str++;
-	if (*str == '+' || *str == '-')
+	c = 1;
+	if (nbr <= 0)
 	{
-		if (*str == '-')
-			minus = -1;
-		str++;
+		nbr *= -1;
+		if (nbr == 0)
+			c = 0;
+		c++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (nbr > 9)
 	{
-		res = res * 10 + *str - 48;
-		if (res > 9223372036854775807)
-		{
-			if (minus < 0)
-				return (0);
-			return (-1);
-		}
-		str++;
+		nbr = nbr / 10;
+		c++;
 	}
-	return (res * minus);
+	return (c);
 }

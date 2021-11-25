@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:15:06 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/19 18:02:50 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/25 14:15:35 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	j;
-	size_t	sl;
+	size_t	dst_strlen;
+	size_t	src_strlen;
+	size_t	ret;
 
-	i = 0;
-	j = ft_strlen(dst);
-	sl = ft_strlen(dst) + ft_strlen(src);
-	if (ft_strlen(dst) > dstsize)
-		return (ft_strlen(src) + dstsize);
-	while (j < dstsize - 1 && src[i])
-		dst[j++] = src[i++];
-	dst[j] = '\0';
-	return (sl);
+	dst_strlen = ft_strlen(dst);
+	src_strlen = ft_strlen(src);
+	ret = dst_strlen + src_strlen;
+	if (dst_strlen > dstsize)
+		return (src_strlen + dstsize);
+	while (dst_strlen < dstsize - 1 && *src)
+		dst[dst_strlen++] = *src++;
+	dst[dst_strlen] = '\0';
+	return (ret);
 }

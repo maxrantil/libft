@@ -6,12 +6,15 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:44:24 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/23 17:10:57 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/25 14:57:35 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define OUT 0
+# define IN 1
 
 # include <string.h>
 # include <unistd.h>
@@ -83,10 +86,11 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list*elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-int		ft_nbrlen(int i);
+int		ft_intlen(long nbr);
 int		ft_lstcount(t_list *head);
 void	ft_lstputnbr(t_list **alst);
 void	ft_lstaddend(t_list **alst, t_list *new);
 void	ft_lstputstr(t_list **alst);
+int		ft_isspace(const char *str);
 
 #endif

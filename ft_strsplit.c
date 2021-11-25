@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:35:23 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/17 14:37:32 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/25 14:17:52 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 static int	word_count(char const *s, char c)
 {
 	int	state;
-	int	OUT;
-	int	IN;
 	int	wc;
 
-	OUT = 0;
-	IN = 1;
 	wc = 0;
 	state = OUT;
 	while (*s)
