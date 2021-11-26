@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:03:47 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/25 14:57:01 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/26 12:41:03 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_intlen(long nbr)
 	int	c;
 
 	c = 1;
-	if (nbr <= 0)
+	if (nbr < 0)
 	{
 		nbr *= -1;
 		if (nbr == 0)

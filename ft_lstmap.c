@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 15:06:34 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/19 17:40:43 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/26 13:38:27 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	if (!lst || !f)
 		return (NULL);
-	head = ft_lstnew(f(lst)->content, f(lst)->content_size);
+	head = f(lst);
 	if (!head)
 		return (NULL);
 	temp = head;
 	while (lst->next)
 	{
-		temp->next = ft_lstnew(f(lst->next)->content,
-				f(lst->next)->content_size);
+		temp->next = f(lst->next);
 		if (!lst)
 			return (NULL);
 		temp = temp->next;

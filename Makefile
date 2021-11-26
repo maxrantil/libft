@@ -16,14 +16,27 @@ O_FILES = $(C_FILES:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -c $(C_FILES) -I $(HEADER_PATH)
-	ar rc $(NAME) $(O_FILES) 
-	ranlib $(NAME)
+	@echo "This is libft!"
+	@echo ""
+	@echo "██╗     ██╗██████╗ ███████╗████████╗"
+	@echo "██║     ██║██╔══██╗██╔════╝╚══██╔══╝"
+	@echo "██║     ██║██████╔╝█████╗     ██║"
+	@echo "██║     ██║██╔══██╗██╔══╝     ██║"
+	@echo "███████╗██║██████╔╝██║        ██║"
+	@echo "╚══════╝╚═╝╚═════╝ ╚═╝        ╚═╝"   
+	@echo ""
+	@gcc $(FLAGS) -c $(C_FILES) -I $(HEADER_PATH)
+	@ar rc $(NAME) $(O_FILES) 
+	@echo "$(NAME) created"
+	@ranlib $(NAME)
+	@echo "$(NAME) indexed"
 	
 clean:
-	rm -rf $(O_FILES)
+	@rm -rf $(O_FILES)
+	@echo ".o files deleted"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(NAME) deleted"
 
 re: fclean all
