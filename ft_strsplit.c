@@ -6,11 +6,22 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:35:23 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/25 14:17:52 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:55:42 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	*ft_freemal(char **ret, int index)
+{
+	while (index--)
+	{
+		if (ret[index])
+			free(ret[index]);
+	}		
+	free(ret);
+	return (NULL);
+}
 
 static int	word_count(char const *s, char c)
 {
@@ -55,7 +66,10 @@ static char	**make_ret(char const *s, char c, char **ret, size_t e)
 			if (!s[e])
 				break ;
 		}
-		ret[index++] = ft_strsub(s, i, e - i);
+		ret[index] = ft_strsub(s, i, e - i);
+		if (!ret[index])
+			return (ft_freemal(ret, index));
+		index++;
 		i = e;
 	}
 	ret[index] = 0;
