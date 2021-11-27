@@ -176,8 +176,65 @@ int	main()
         }
         bisalnum--;
     }
-		ft_putchar('\n');
- 
+	ft_putchar('\n');
+	
+	//ft_isascii
+	
+	int aisascii = 1510;    
+	int bisascii = 5;
+
+	if (isascii(aisascii) == ft_isascii(aisascii))
+	{
+            printf("ft_isascii	TEST ");
+            GREEN("OK\n");
+            RESET();
+        }
+        else
+        {
+            RED("aisascii != 1510\n");
+            RESET();
+        }
+	if (isascii(bisascii) == ft_isascii(bisascii))
+	{
+            printf("ft_isascii	TEST ");
+            GREEN("OK\n");
+            RESET();
+        }
+        else
+        {
+            RED("bisascii != 5\n");
+            RESET();
+        }
+	ft_putchar('\n');
+
+	//ft_isprint
+	
+	int aisprint = 110;
+	int bisprint = 5;
+
+	if (isprint(aisprint) == ft_isprint(aisprint))
+	{
+            printf("ft_isprint	TEST ");
+            GREEN("OK\n");
+            RESET();
+        }
+        else
+        {
+            RED("aisprint != 110\n");
+            RESET();
+        }
+	if (isprint(bisprint) == ft_isprint(bisprint))
+	{
+            printf("ft_isprint	TEST ");
+            GREEN("OK\n");
+            RESET();
+        }
+        else
+        {
+            RED("bisprint != 5\n");
+            RESET();
+        }
 
 
+	return (0);
 }
