@@ -110,5 +110,90 @@ int	main()
 	}
 	ft_putchar('\n');
 
+	//ft_strchr
+	
+	char 	str_strchr[] = "Hello\0World";
+	char	c_strchr = 0;
+
+	while (c_strchr != 122)
+	{
+		if (ft_strchr(str_strchr, c_strchr) != strchr(str_strchr, c_strchr))
+		{
+			RED("ft_strchr != %c\n", c_strchr);
+			RESET();
+		}
+		c_strchr++;
+	}
+	if (c_strchr == 122)
+	{
+		printf("ft_strchr	TEST ");
+		GREEN("OK\n");
+		RESET();
+	}
+	else
+		printf("test not ended...\n");
+	ft_putchar('\n');
+
+	//ft_strrchr
+	
+	char 	str_strrchr[] = "Hello\0World";
+	char	c_strrchr = 122;
+
+	while (c_strrchr != 1)
+	{
+		if (ft_strrchr(str_strrchr, c_strrchr) != strrchr(str_strrchr, c_strrchr))
+		{
+			RED("ft_strrchr != %c\n", c_strrchr);
+			RESET();
+		}
+		c_strrchr--;
+	}
+	if (c_strrchr == 1)
+	{
+		printf("ft_strrchr	TEST ");
+		GREEN("OK\n");
+		RESET();
+	}
+	else
+	{
+		printf("ft_strrchr	TEST ");
+		RED("NOT OK\n");
+		RESET();
+	}
+	ft_putchar('\n');
+
+	//ft_bzero
+	
+	char	str1_bzero[] = "Hello World";
+	char	str2_bzero[] = "Hello World";
+	size_t	v_bzero = 15;
+
+	while (v_bzero != 0)
+	{
+		ft_bzero(str1_bzero, v_bzero);
+		bzero(str2_bzero, v_bzero);
+		if (printf("%s", str1_bzero) != printf("%s", str2_bzero))
+		{
+			RED("ft_bzero != %zu\n", v_bzero);
+			RESET();
+		}
+		v_bzero--;
+	}
+	if (v_bzero == 0)
+	{
+		printf("ft_bzero	TEST ");
+		GREEN("OK\n");
+		RESET();
+	}
+	else
+	{
+		printf("ft_bzero	TEST ");
+		RED("NOT OK\n");
+		RESET();
+	}
+	ft_putchar('\n');
+
+
 	return (0);
+
 }
