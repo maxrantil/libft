@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:52:52 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/29 13:38:38 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/29 20:07:40 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main()
 
 	//ft_strcpy
 	
-	char *str_strcpy[19] = {"cpy this str", "das\0assd\0", "  \t \0 \t  ", "         ", "yes", "OK"};
+	char *str_strcpy[] = {"cpy this str", "das\0assd\0", "  \t \0 \t  ", "         ", "yes", "OK"};
   	char dst_strcpy[19];
 	char dst1_strcpy[19];
 	int		i = 0;
@@ -76,21 +76,30 @@ int	main()
 	//ft_strcat
 	
 	i = 0;
+	int	count = 0;
+	char	*cat1;  
+	char	*cat2;
+	cat1 = (char *)ft_memalloc(sizeof(char) * 100);
+	if (!cat1)
+		return (0);
+	cat2 = (char *)ft_memalloc(sizeof(char) * 100);
+	if (!cat2)
+		return (0);
+	const	char *str[] = {"cpy str", "abcdaaaaaaaaaa", "\0\0\0\0\0\0\0\0", "\t \0  \v ", "     \0   \0", "yes"};
 
-	const	char *dst[] = {"cpy this str", "        ", "\0\0\0\0\0\0\0\0", "\t \0  \v ", "     \0   \0", "yes"};
-  	char str[30] = ":into: this str";
+	const	char *str1[] = {"cpy str", "abcdaaaaaaaaaa", "\0\0\0\0\0\0\0\0", "\t \0  \v ", "     \0   \0", "yes"};
+	char *s1;
+	char *s2;
 
-	const	char *dst1[] = {"cpy this str", "        ", "\0\0\0\0\0\0\0\0", "\t \0  \v ", "     \0   \0", "yes"};
-  	char str1[30] = ":into: this str";
-	
 	while (i < 5)
 	{
-		char *cat1 = ft_strcat(str1, dst1[i]);
-		char *cat2 = strcat(str, dst[i]);
-		while (strcmp(cat1, cat2) == 0)
-			i++;
+		s1 = ft_strcat(cat1, str[i]);
+		s2 = strcat(cat2, str1[i]);
+		if (strcmp(s1, s2) == 0)
+			count++;
+		i++;
 	}
-	if (i == 5)
+	if (count == 5)
 	{
 		printf("ft_strcat	TEST ");
 		GREEN("OK");
@@ -98,10 +107,104 @@ int	main()
 	}
 	else
 	{
-		printf("ft_strcpy	TEST ");
+		printf("ft_strcat	TEST ");
 		RED("NOT OK\n");
 		RESET();
 	}
 	ft_putchar('\n');
+
+	//ft_strcmp
+	
+	i = 0;
+
+ 	char *cmp_stri[] = {"cmp this str to str1", "", "\0", "\t \v        \t     \0    \0   \0"};
+
+	while (i < 4 && strcmp(cmp_stri[i], cmp_stri[i + 1]) == ft_strcmp(cmp_stri[i], cmp_stri[i + 1]))
+		i++;
+	if (i == 4)
+	{
+		printf("ft_strcmp	TEST ");
+		GREEN("OK");
+		RESET("	(%d of %d complete)\n", i, i);
+	}
+	else
+	{
+		printf("ft_strcmp	TEST ");
+		RED("NOT OK, %d failed \n", i);
+		RESET();
+	}
+	ft_putchar('\n');
+
+	//ft_strstr
+	
+	i = 0;
+ 	const char *ss_str2[] = {"srdub stthrstrirs str is a much", "str", "mug", "", "  "};
+	while (i < 4 && strstr(ss_str2[i], ss_str2[i + 1]) == ft_strstr(ss_str2[i], ss_str2[i + 1]))
+		i++;
+	if (i == 4)
+	{
+		printf("ft_strstr	TEST ");
+		GREEN("OK");
+		RESET("	(%d of %d complete)\n", i, i);
+	}
+	else
+	{
+		printf("ft_strstr	TEST ");
+		RED("NOT OK, %d failed \n", i);
+		RESET();
+	}
+	ft_putchar('\n');
+
+	//ft_memmove
+	
+	char memmove_str1[] = "stackoverflow";
+    char memmove_str2[] = "stackoverflow";
+
+    int y = 0;
+	void	*p1;
+	void	*p2;
+
+    p1 = memmove(memmove_str1 + 5, memmove_str1, y);
+    p2 = ft_memmove(memmove_str2 + 5, memmove_str2, y);
+	while (y < 10 && 0 == strcmp((char *)p1, (char *)p2))
+		y++;
+	if (y == 10)
+	{
+		printf("ft_memmove	TEST ");
+		GREEN("OK");
+		RESET("	(%d of %d complete)\n", y, y);
+	}
+	else
+	{
+		printf("ft_memmove	TEST ");
+		RED("NOT OK, %d failed \n", y);
+		RESET();
+	}
+	ft_putchar('\n');
+
+	//ft_memcmp
+	
+	i = 0;
+	char *memcmp_stri[] = {"cm1p this str to str1", "cmp1 this str to str2", "cmp 1this str to str3", "cmp t1his str to str4"};
+	char *memcmp_str1[] = {"cm1p this str to str1", "cmp1 this str to str2", "cmp 1this str to str3", "cmp t1his str to str4"};
+
+	while (i < 3 && memcmp(memcmp_stri[i], memcmp_stri[i + 1], i) == ft_memcmp(memcmp_str1[i], memcmp_str1[i + 1], i))
+		i++;
+	if (i == 3)
+	{
+		printf("ft_memcmp	TEST ");
+		GREEN("OK");
+		RESET("	(%d of %d complete)\n", i + 1, i + 1);
+	}
+	else
+	{
+		printf("ft_memcmp	TEST ");
+		RED("NOT OK, %d failed \n", i);
+		RESET();
+	}
+	ft_putchar('\n');
+
 	return (0);
+
+
 }
