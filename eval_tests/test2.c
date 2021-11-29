@@ -166,15 +166,17 @@ int	main()
 	
 	char	str1_bzero[] = "Hello World";
 	char	str2_bzero[] = "Hello World";
-	size_t	v_bzero = 15;
+	int		v_bzero = 11;
 
 	while (v_bzero != 0)
 	{
+
+		bzero(str2_bzero, v_bzero);
 		ft_bzero(str1_bzero, v_bzero);
 		bzero(str2_bzero, v_bzero);
-		if (printf("%s", str1_bzero) != printf("%s", str2_bzero))
+		if (memcmp(str1_bzero, str2_bzero, v_bzero) != 0)
 		{
-			RED("ft_bzero != %zu\n", v_bzero);
+			RED("ft_bzero != %d\n", v_bzero);
 			RESET();
 		}
 		v_bzero--;
