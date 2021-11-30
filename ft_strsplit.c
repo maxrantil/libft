@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:35:23 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/29 19:56:57 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/30 16:47:14 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,15 @@ static int	word_count(char const *s, char c)
 	return (wc);
 }
 
-static char	**make_ret(char const *s, char c, char **ret, size_t e)
+static char	**make_ret(char const *s, char c, char **ret)
 {
 	size_t	i;
-	int		index;
+	size_t	index;
+	size_t	e;
 
 	i = 0;
 	index = 0;
+	e = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
@@ -79,14 +81,12 @@ static char	**make_ret(char const *s, char c, char **ret, size_t e)
 char	**ft_strsplit(char const *s, char c)
 {
 	char		**ret;
-	size_t		e;
 
-	e = 0;
 	if (!s)
 		return (NULL);
 	ret = (char **)malloc(sizeof(char *) * word_count(s, c) + 1);
 	if (!ret)
 		return (NULL);
-	ret = make_ret(s, c, ret, e);
+	ret = make_ret(s, c, ret);
 	return (ret);
 }

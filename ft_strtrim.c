@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim1.c                                      :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: mrantil <mrantil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 11:54:38 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/22 12:56:37 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/11/30 18:39:38 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,17 @@
 
 char	*ft_strtrim(char const *s)
 {
-	size_t		i;
-	size_t		e;
-	size_t		start;
 	char		*st;
+	size_t		sl;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	e = ft_strlen(s) - 1;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-		i++;
-	start = i;
-	if (i != ft_strlen(s))
-	{
-		while (s[e] == ' ' || s[e] == '\t' || s[e] == '\n')
-		{
-			e--;
-			i++;
-		}
-	}
-	st = ft_strsub(s, start, ft_strlen(s) - i);
-	if (!st)
-		return (NULL);
+	while (ft_isspace(s))
+		s++;
+	sl = ft_strlen(s);
+	if (*s)
+		while (ft_isspace(&s[sl - 1]))
+			sl--;
+	st = ft_strsub(s, 0, sl);
 	return (st);
 }
