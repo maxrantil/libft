@@ -6,7 +6,7 @@
 /*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:42:17 by mrantil           #+#    #+#             */
-/*   Updated: 2021/11/30 18:44:47 by mrantil          ###   ########.fr       */
+/*   Updated: 2021/12/02 17:55:25 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,43 +214,123 @@ int	test_ft_atoi(void)
 	return 0;
 }
 
-int	test_memccpy(void)
+int	test_ft_memccpy(void)
 {
 	void    *mem;
     void    *membis;
 	void	*mem1;
 	void	*membis1;
+	int		test = 0;
 
 	if (!(mem = malloc(sizeof(*mem) * 30)))
         return (0);
-    ft_memset(mem, '*', 29);
+    
+	ft_memset(mem, '*', 29);
     ((char*)mem)[29] = '\0';
+
     membis = mem;
 	if (!(mem = ft_memccpy(mem, "0yxwvutsrqponmlkjihgfedcba", 'r', 20)))
-    	ft_putendl("NULL");
-	else
 	{
-        ft_putendl(mem);
-        write(1, "\n", 1);
-        ft_putendl(membis);
-    }
-
-	write(1, "\n", 1);
+		printf("ft_memccpy		TEST ");
+		RED("NOT OK (1yx)\n");
+		RESET();
+	}
+	else
+		test++;
 	if (!(mem1 = malloc(sizeof(*mem1) * 30)))
 		return (0);
 	ft_memset(mem1, '*', 29);
     ((char*)mem1)[29] = '\0';
 	membis1 = mem1;
     if (!(mem1 = ft_memccpy(mem1, "1yxwvutsrqponmlkjihgfedcba", 'r', 3)))
-        ft_putendl("NULL(is good)");
-    else
-    {
-        ft_putendl(mem1);
-        write(1, "\n", 1);
-        ft_putendl(membis1);
-    }
+		test++;
+	else
+	{
+		printf("ft_memccpy		TEST ");
+		RED("NOT OK (1yx)\n");
+		RESET();
+	}
+	if (test == 2)
+	{
+		printf("ft_memccpy	TEST ");
+		GREEN("OK");
+		RESET("	(%d of %d complete)\n", test, test);
+	}
+	ft_putchar('\n');
 
     return (0);
+}
+
+int	test_ft_strnstr(void)
+{
+    char *s1 = "MZIRIBMZIRIBMZE123";
+    char *s2 = "MZIRIBMZE";
+    size_t max = strlen(s2);
+    char *i1 = strnstr(s1, s2, max);
+    char *i2 = ft_strnstr(s1, s2, max);
+	int	test = 0;
+
+	if (i1 == i2)
+		test++;
+    else
+    {
+        printf("ft_strnstr     TEST ");
+        RED("NOT OK (MZIR)\n");
+        RESET();
+    }
+	char	buf[10];
+	if (ft_strnstr(buf, "deux", 5) == strnstr(buf, "deux", 5))
+		test++;
+	else
+    {
+        printf("ft_strnstr     TEST ");
+        RED("NOT OK (deux)\n");
+        RESET();
+    }
+	char	buf2[] = "ozarabozaraboze123";
+	if (ft_strnstr(buf2, "ozaraboze", 15) == strnstr(buf2, "ozaraboze", 15)) //"ozaraboze123") == 0);
+		test++;
+	else
+    {
+        printf("ft_strnstr     TEST ");
+        RED("NOT OK (ozar)\n");
+        RESET();
+    }
+	char	buf3[10];
+	bzero(buf3, 10);
+	strcpy(buf3, "un deux 9");
+
+	if(strcmp(ft_strnstr(buf3, "deux", 10), "deux 9") == 0)
+		test++;
+	else
+    {
+        printf("ft_strnstr     TEST ");
+        RED("NOT OK (deux 9)\n");
+        RESET();
+    }
+	if (ft_strnstr(buf3, "9", 3) == NULL)
+		test++;
+	else
+    {
+        printf("ft_strnstr     TEST ");
+        RED("NOT OK ('9')\n");
+        RESET();
+    }
+	if(strcmp(ft_strnstr(buf3, "", 6), buf3) == 0)
+		test++;
+	else
+    {
+        printf("ft_strnstr     TEST ");
+        RED("NOT OK (empty)\n");
+        RESET();
+    }
+	if (test == 6)
+	{
+        printf("ft_strnstr	TEST ");
+        GREEN("OK");
+        RESET(" (%d of %d complete)\n", test, test);
+    }
+	return 0;
 }
 
 int	main()
@@ -259,5 +339,6 @@ int	main()
 	test_ft_strdup();
 	test_ft_atoi();
 	test_ft_memccpy();
+	test_ft_strnstr();
 	return 0;
 }
