@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test4.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrantil <mrantil@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: mrantil <mrantil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:42:17 by mrantil           #+#    #+#             */
-/*   Updated: 2021/12/02 17:55:25 by mrantil          ###   ########.fr       */
+/*   Updated: 2022/01/24 12:39:44 by mrantil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define RESET(...) printf("\033[0m" __VA_ARGS__)
 
 #include <stdio.h>
-#include "libft.h"
+#include "../libft.h"
 
 /*- ft_strlcat
 **- ft_strdup
@@ -49,12 +49,12 @@ size_t	test_ft_strlcat()
 	{
 		printf("ft_strlcat	TEST ");
 		GREEN("OK");
-		RESET("	(%zu of %zu complete)\n", count, count);
+		RESET("	(%zu of %zu complete)", count, count);
 	}
 	else
 	{
 		printf("ft_strlcat	TEST ");
-		RED("NOT OK\n");
+		RED("NOT OK");
 		RESET();
 	}
 
@@ -75,8 +75,8 @@ size_t	test_ft_strlcat()
 	r2 = ft_strlcat(s2, "thx to ntoniolo for this test !", 4)
 		;
 	if (r1 != r2)
-		RED("extra Test Failed\n");
-	GREEN("extra Test Succed\n");
+		RED("	extra Test Failed\n");
+	GREEN("	extra Test Succed\n");
 	RESET();
 
     return (0);
@@ -93,14 +93,18 @@ size_t	test_ft_strdup()
 	int	test = 0;
 	
 	if (0 == strcmp(ft_strdup(str3), strdup(str3)))
+	{
 		test++;
+	}
 	else 
 	{
 		RED("Test %d NOT OK\n", test);
         RESET();
 	}
 	if (0 == strcmp(ft_strdup(str4), strdup(str4)))
+	{
 		test++;
+	}
 	else 
 	{
 		RED("Test %d NOT OK\n", test);
@@ -115,13 +119,13 @@ size_t	test_ft_strdup()
 	}
 	if (test == 3)
 	{
-		printf("ft_strdup	TEST ");
+		printf("\nft_strdup	TEST ");
 		GREEN("OK");
 		RESET("	(%d of %d complete)\n", test, test);
 	}
 	else
 	{
-		printf("ft_strdup	TEST ");
+		printf("\nft_strdup	TEST ");
 		RED("NOT OK\n");
 		RESET();
 	}
@@ -333,6 +337,134 @@ int	test_ft_strnstr(void)
 	return 0;
 }
 
+int	test_ft_strncmp(void)
+{
+	char *str = "cmp this str to str1";
+	char *str1 = "cmp this2 str to str1";
+	char *str2 = "cmp t2his str to str";
+	char *str3 = "cmp2 this str to str2";
+	int	test = 0;
+
+	if (strncmp(str, str1, 4) == ft_strncmp(str, str1, 4))
+	{
+		test++;
+	}
+	else 
+	{
+		printf("ft_strncmp     TEST1 ");
+        RED("NOT OK (empty)\n");
+        RESET();
+	}
+	if (strncmp(str1, str2, 9) == ft_strncmp(str1, str2, 9))
+	{
+		test++;
+	}
+	else
+	{
+		printf("ft_strncmp     TEST2 ");
+        RED("NOT OK (empty)\n");
+        RESET();
+	}
+	if (strncmp(str3, str, 7) == ft_strncmp(str3, str, 7))
+	{
+		test++;
+	}
+	else 
+	{
+		printf("ft_strncmp     TEST3 ");
+        RED("NOT OK (empty)\n");
+        RESET();
+	}
+	if (strncmp(str2, str3, 7) == ft_strncmp(str2, str3, 7))
+	{
+		test++;
+	}
+	else 
+	{
+		printf("ft_strncmp     TEST4 ");
+        RED("NOT OK (empty)\n");
+        RESET();
+	}
+	if (test == 4)
+	{
+        printf("\nft_strncmp	TEST ");
+        GREEN("OK");
+        RESET(" (%d of %d complete)\n", test, test);
+    }
+	else
+	{
+		printf("ft_strncmp     TEST ");
+        RED("NOT OK\n");
+        RESET();
+	}
+	return 0; 
+}
+
+int test_ft_strncpy(void) 
+{  
+	char str[19] = "cpy this str";
+  	char dst[19];
+	char dst1[19];
+	int	test = 1;
+
+	if (!strcmp(strncpy(dst, str, 13), ft_strncpy(dst1, str, 13)))
+	{
+		printf("\nft_strncpy	TEST ");
+        GREEN("OK");
+        RESET(" (%d of %d complete)\n", test, test);
+	}
+	else
+	{
+		printf("ft_strncpy     TEST ");
+        RED("NOT OK\n");
+        RESET();
+	}
+	return 0; 
+}
+
+int test_ft_strncat(void) 
+{  
+	char dst[29] = "cpy this str";
+  	const char str[29] = ":into: this str";
+	char dst1[29] = "cpy this str";
+  	const char str1[29] = ":into: this str";
+	
+	char dst2[18] = "cpy this str";
+  	const char str2[18] = ":into: this str";
+	char dst3[18] = "cpy this str";
+  	const char str3[18] = ":into: this str";
+
+	unsigned int n = 5;
+	int		test = 0;
+
+
+	if (!strcmp(ft_strncat(dst1, str1, n), strncat(dst, str, n)))
+	{
+		test++;
+	}
+	else
+	{
+		printf("ft_strncat     TEST1 ");
+        RED("NOT OK\n");
+        RESET();
+	}
+	if (!strcmp(ft_strncat(dst2, str2, n), strncat(dst3, str3, n)))
+	{
+		test++;
+		printf("\nft_strncat	TEST ");
+		GREEN("OK");
+        RESET(" (%d of %d complete)\n", test, test);
+	}
+	else
+	{
+		printf("ft_strncat     TEST ");
+        RED("NOT OK\n");
+        RESET();
+	}
+
+	return 0;
+}
+
 int	main()
 {
 	test_ft_strlcat();
@@ -340,5 +472,18 @@ int	main()
 	test_ft_atoi();
 	test_ft_memccpy();
 	test_ft_strnstr();
+	test_ft_strncmp();
+	test_ft_strncpy();
+	test_ft_strncat(); 
 	return 0;
 }
+
+/*- ft_strlcat
+**- ft_strdup
+**- ft_atoi
+**- ft_memccpy
+**- ft_strnstr
+**- ft_strncmp
+**- ft_strncpy
+**- ft_strncat
+*/
