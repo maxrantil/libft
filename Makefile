@@ -26,7 +26,7 @@ $(NAME):
 	@echo "╚══════╝╚═╝╚═════╝ ╚═╝        ╚═╝"   
 	@echo ""
 	@gcc $(FLAGS) -c $(C_FILES) $(HEADER_PATH)
-	@ar rc $(NAME) $(O_FILES) 
+	@ar rc $(NAME) $(O_FILES)
 	@echo "$(NAME) created"
 	@ranlib $(NAME)
 	@echo "$(NAME) indexed"
